@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sphah - WordPress Developer Portfolio</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+--primary-color: #D96AA7;
+--secondary-color: #422C73;
+--complimentary-color: #88BFB5;
+--contrast-color: #F2E527;
+--light-color: #D2A9D9;
+}
+
+.container {
+  background: #191919;
+  min-height: 100vh;
+  font-family: Montserrat, sans-serif;
+}
+
+nav a {
+    font-size: 40px;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--secondary-color);
+}
+
+section {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 0;
+    opacity: 0;
+    transition: all ease-in .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+section h1 {
+    color: #fff;
+    font-size: 50px;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+/* Styles applied on trigger */
+section:target {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+section:target h1 {
+    opacity: 0;
+    animation: 2s fadeIn forwards .5s;
+}
+
+#first {
+  background:var(--primary-color);
+}
+#second {
+    background: var(--complimentary-color);
+}
+
+#third {
+    background: var(--contrast-color);
+}
+
+#fourth {
+    background: var(--light-color);
+}
+
+@keyframes fadeIn {
+    100% { opacity:1 }
+}
+</style>
+</head>
+<body>
+    <nav>
+        <a href="#first"><i class="far fa-user"></i></a>
+        <a href="#second"><i class="fas fa-briefcase"></i></a>
+        <a href="#third"><i class="far fa-file"></i></a>
+        <a href="#fourth"><i class="far fa-address-card"></i></a>
+      </nav>
+       
+     <div class= 'container'> 
+       <section id= 'first'>
+         <h1>First</h1>
+       </section>
+       
+       <section id= 'second'>
+         <h1>Second</h1>
+       </section>
+       
+      <section id= 'third'>
+        <h1>Third</h1>
+       </section>
+       
+      <section id= 'fourth'>
+        <h1>Fourth</h1>
+       </section>
+     </div>
+    <svg style="width: 100%; height: auto;" id="visual" viewBox="0 0 1920 1080" width="1920" height="1080">
+        <rect width="1920" height="1080" fill="#80a3b1"></rect><g><g transform="translate(424 833)">
+    
+            <path d="M186.2 -56.3C211 15.9 180 110.5 114.1 158.7C48.3 206.9 -52.4 208.8 -122.2 160C-192 111.2 -230.9 11.8 -205.4 -61.4C-179.9 -134.6 -89.9 -181.5 -4.6 -179.9C80.7 -178.4 161.4 -128.6 186.2 -56.3Z" stroke="#7812ff" fill="none" stroke-width="20">
+
+            </path></g><g transform="translate(1467 24)">
+                <path d="M140.1 -44.8C161.2 19.6 144.1 97.1 96.6 131.2C49.1 165.3 -28.7 156 -86.9 114.8C-145.1 73.7 -183.6 0.8 -165.9 -59C-148.1 -118.7 -74.1 -165.3 -7.3 -162.9C59.5 -160.5 118.9 -109.2 140.1 -44.8Z" stroke="#7812ff" fill="none" stroke-width="20"></path></g><g transform="translate(22 125)"><path d="M129.1 -39.4C145 7 120.2 69.1 77 98.8C33.8 128.4 -27.7 125.6 -69.3 95.4C-110.8 65.2 -132.4 7.6 -117.5 -37.4C-102.6 -82.4 -51.3 -114.8 2.6 -115.6C56.6 -116.5 113.2 -85.8 129.1 -39.4Z" stroke="#7812ff" fill="none" stroke-width="20">
+
+                </path></g></g></svg>
+
+            <svg id="visual" style="width: 100%; height: auto;" viewBox="0 0 1920 1080" width="1920" height="1080"><rect width="1920" height="1080" fill="#7812ff"></rect><g><g transform="translate(331 202)"><path d="M180.7 -58.9C202.5 8.3 166.6 94.1 105.3 136.6C44.1 179.1 -42.4 178.3 -103.5 135.6C-164.5 92.9 -200 8.2 -178.5 -58.7C-157 -125.5 -78.5 -174.5 0.5 -174.6C79.5 -174.8 158.9 -126.1 180.7 -58.9Z" stroke="#80a3b1" fill="none" stroke-width="20"></path></g><g transform="translate(1834 1011)"><path d="M87.2 -28.5C98.9 7.7 84.6 52.1 51.7 77.5C18.8 102.9 -32.6 109.3 -67.3 85.7C-101.9 62.1 -119.9 8.7 -105.9 -30.7C-91.9 -70 -45.9 -95.3 -4.1 -93.9C37.8 -92.6 75.5 -64.7 87.2 -28.5Z" stroke="#80a3b1" fill="none" stroke-width="20"></path></g><g transform="translate(49 739)"><path d="M103.6 -33.4C116 4.4 95.2 53.4 59.1 78.9C23.1 104.5 -28 106.8 -60.6 83.2C-93.1 59.6 -107 10.2 -93.8 -28.8C-80.6 -67.8 -40.3 -96.3 2.7 -97.2C45.6 -98 91.2 -71.2 103.6 -33.4Z" stroke="#80a3b1" fill="none" stroke-width="20"></path></g></g></svg>
+            <svg id="visual" viewBox="0 0 1920 1080" width="1920" height="1080"><rect width="1920" height="1080" fill="#7812ff"></rect><g><g transform="translate(331 202)"><path d="M180.7 -58.9C202.5 8.3 166.6 94.1 105.3 136.6C44.1 179.1 -42.4 178.3 -103.5 135.6C-164.5 92.9 -200 8.2 -178.5 -58.7C-157 -125.5 -78.5 -174.5 0.5 -174.6C79.5 -174.8 158.9 -126.1 180.7 -58.9Z" fill="#80a3b1"></path></g><g transform="translate(1834 1011)"><path d="M87.2 -28.5C98.9 7.7 84.6 52.1 51.7 77.5C18.8 102.9 -32.6 109.3 -67.3 85.7C-101.9 62.1 -119.9 8.7 -105.9 -30.7C-91.9 -70 -45.9 -95.3 -4.1 -93.9C37.8 -92.6 75.5 -64.7 87.2 -28.5Z" fill="#80a3b1"></path></g><g transform="translate(49 739)"><path d="M103.6 -33.4C116 4.4 95.2 53.4 59.1 78.9C23.1 104.5 -28 106.8 -60.6 83.2C-93.1 59.6 -107 10.2 -93.8 -28.8C-80.6 -67.8 -40.3 -96.3 2.7 -97.2C45.6 -98 91.2 -71.2 103.6 -33.4Z" fill="#80a3b1"></path></g></g></svg>
+            <svg id="visual" viewBox="0 0 1920 1080" width="1920" height="1080"><rect width="1920" height="1080" fill="#7812ff"></rect><g><g transform="translate(746 563)"><path d="M195.8 -63.2C223.4 21.1 194.2 124.2 126.9 172.6C59.6 221 -45.9 214.6 -112.5 164.1C-179 113.5 -206.7 18.7 -181.5 -62.4C-156.3 -143.6 -78.1 -211 3 -211.9C84.2 -212.9 168.3 -147.5 195.8 -63.2Z" fill="#80a3b1"></path></g><g transform="translate(1426 778)"><path d="M111.5 -40.7C123.9 1.8 99 51.9 60.1 79.3C21.2 106.7 -31.6 111.4 -65.8 87.3C-100 63.3 -115.5 10.3 -101.5 -34.5C-87.4 -79.4 -43.7 -116.2 2.9 -117.2C49.6 -118.1 99.2 -83.2 111.5 -40.7Z" fill="#80a3b1"></path></g><g transform="translate(1798 145)"><path d="M112.1 -39C126.9 9 107.8 65.5 70.6 91C33.5 116.5 -21.6 111.1 -57.9 83.8C-94.2 56.5 -111.6 7.3 -98.8 -38C-86 -83.4 -43 -124.9 2.8 -125.8C48.7 -126.7 97.3 -87.1 112.1 -39Z" fill="#80a3b1"></path></g></g></svg>
+            <svg id="visual" viewBox="0 0 1920 1080" width="1920" height="1080"><rect width="1920" height="1080" fill="#80a3b1"></rect><g><g transform="translate(368 33)"><path d="M203.6 -65.5C228.7 11.1 189.6 109.1 117.7 161.2C45.7 213.3 -59.1 219.5 -128.4 170.6C-197.8 121.6 -231.6 17.7 -204.3 -61.9C-177 -141.6 -88.5 -196.9 0.4 -197C89.3 -197.1 178.5 -142.1 203.6 -65.5Z" fill="#7812ff"></path></g><g transform="translate(1432 979)"><path d="M169.3 -59.9C188.1 2.9 150.5 79.1 89.3 123.7C28.2 168.3 -56.5 181.3 -106.5 145.3C-156.5 109.3 -171.9 24.2 -148.3 -45.1C-124.8 -114.3 -62.4 -167.8 6.4 -169.9C75.2 -172 150.5 -122.7 169.3 -59.9Z" fill="#7812ff"></path></g><g transform="translate(285 956)"><path d="M82.8 -22.9C95.8 13.2 87 60.4 58 82C29 103.5 -20.2 99.5 -51 75.8C-81.8 52.1 -94.2 8.7 -82.6 -25.4C-71 -59.4 -35.5 -84.2 -0.3 -84.1C34.9 -84 69.8 -59 82.8 -22.9Z" fill="#7812ff"></path></g></g></svg>
+        </body>
+</html>
