@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sphah - WordPress Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Dancing Script', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Nunito Sans', sans-serif;
+
 }
 
 :root {
@@ -20,12 +28,12 @@
 }
 
 .container {
-  background: #191919;
+  background: #7aa3b2;
   min-height: 100vh;
   font-family: Montserrat, sans-serif;
 }
 
-nav a {
+/* nav a {
     font-size: 40px;
     color: #fff;
     text-decoration: none;
@@ -42,6 +50,78 @@ nav {
     flex-direction: column;
     height: 100vh;
     background: var(--secondary-color);
+} */
+
+nav{
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+nav div{
+	text-align: center;
+  padding: 0;
+}
+
+nav a {
+  position: relative;
+  z-index: 1;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+	position: relative;
+	width: 70px;
+	cursor: pointer;
+	background: #6200ff;
+	text-transform: uppercase;
+	transition:all .4s ease-out;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+nav a:after {
+	position: absolute;
+	background: white;
+	color: #6200ff;
+	top:0;
+	left: 70px;
+	width: 70px; 
+	height: 70px;
+  opacity:.5;
+  transform: perspective(400px) rotateY(90deg);
+	transform-origin: 0 100%;
+	transition:all .4s ease-out;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+nav a:nth-child(1):after { 
+	content: "Home";
+}
+nav a:nth-child(2):after { 
+	content: "About";
+}
+nav a:nth-child(3):after { 
+	content: "Work";
+}
+nav a:nth-child(4):after { 
+	content: "Say hi";
+}
+
+nav a:hover {
+	transform: translateX(-70px);
+}
+
+nav a:hover:after {
+  opacity: 1;
+	transform: perspective(400px) rotateY(0deg) scale(1) ;
+}
+nav a{
+  color: #fff;
+  text-decoration: none;
 }
 
 section {
@@ -54,7 +134,21 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-} 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: center;
+    background-size: cover;
+}
+
+
+.bg-svg{
+  width: 100%; 
+  height: auto; 
+  position: absolute; 
+  top:0; 
+  z-index: -1; 
+  left: 0; 
+}
 
 section h1 {
     color: #fff;
@@ -73,69 +167,241 @@ section:target {
     z-index: 10;
 }
 
-section:target h1 {
+section:target article {
     opacity: 0;
     animation: 2s fadeIn forwards .5s;
 }
 
-#first {
-  background:var(--primary-color);
-}
-#second {
-    background: var(--complimentary-color);
-}
-
-#third {
-    background: var(--contrast-color);
+.animated-svg{
+  position: static;
+  z-index: auto;
+  width: auto;
+  height: auto;
 }
 
-#fourth {
-    background: var(--light-color);
+.animated-text {
+    font-family: Arial, sans-serif;
+    fill: none;
+    stroke: #fff;
+    font-weight: 700;
+    stroke-width: 2;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: draw 3s ease-in-out alternate-reverse infinite;
+    font-size: 45px;
+    text-transform: uppercase;
+}
+
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 400;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
 }
 
 @keyframes fadeIn {
     100% { opacity:1 }
 }
+.profile-image{
+  width:150px; 
+  height: 150px; 
+  object-position:center top; 
+  display: block; 
+  margin:auto; 
+  border-radius:100%; 
+  object-fit: cover;
+}
+
+.textblock{
+  color: #fff; 
+  margin: auto;
+  max-width: 800px; 
+  width: 100%; 
+  text-align: center;
+}
+
+.card{
+  display: grid;
+  gap: 20px;
+  padding:20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  grid-template-rows: 1fr 1fr 1fr auto;
+}
+
+.card img{
+  max-width: 100px;
+  margin: auto;
+  display: block;
+}
+h3{
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
 </style>
 </head>
 <body>
-    <nav>
-        <a href="#first"><i class="far fa-user"></i></a>
-        <a href="#second"><i class="fas fa-briefcase"></i></a>
-        <a href="#third"><i class="far fa-file"></i></a>
-        <a href="#fourth"><i class="far fa-address-card"></i></a>
-      </nav>
-       
-     <div class= 'container'> 
-       <section id= 'first'>
-         <h1>First</h1>
-       </section>
-       
-       <section id= 'second'>
-         <h1>Second</h1>
-       </section>
-       
-      <section id= 'third'>
-        <h1>Third</h1>
-       </section>
-       
-      <section id= 'fourth'>
-        <h1>Fourth</h1>
-       </section>
-     </div>
-    <svg style="width: 100%; height: auto;" id="visual" viewBox="0 0 1920 1080" width="1920" height="1080">
-        <rect width="1920" height="1080" fill="#80a3b1"></rect><g><g transform="translate(424 833)">
-    
-            <path d="M186.2 -56.3C211 15.9 180 110.5 114.1 158.7C48.3 206.9 -52.4 208.8 -122.2 160C-192 111.2 -230.9 11.8 -205.4 -61.4C-179.9 -134.6 -89.9 -181.5 -4.6 -179.9C80.7 -178.4 161.4 -128.6 186.2 -56.3Z" stroke="#7812ff" fill="none" stroke-width="20">
+<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<nav>
+  <div>
+    <a href="#first"><span class="material-symbols-outlined">home</span></a>
+    <a href="#second"><span class="material-symbols-outlined">home</span></a>
+    <a href="#third"><span class="material-symbols-outlined">home</span></a>
+    <a href="#fourth"><span class="material-symbols-outlined">home</span></a>
+  </div>
+</nav>
+<div class= 'container'> 
+  <section id= 'first'>
+    <article class="textblock">
+        <img src="siphamandla.jpeg" class="profile-image" />
+        <svg width="400" class="animated-svg" height="100" xmlns="http://www.w3.org/2000/svg">
+            <text x="50" y="50" class="animated-text">Siphamandla</text>
+        </svg>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Quam aspernatur sed consequuntur tempore nihil inventore accusantium, quaerat, 
+          recusandae soluta earum quae. Nobis optio assumenda magnam quasi debitis perspiciatis quo porro.
+        </p>
+    </article>
+    <svg class="bg-svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+          <rect width="1920" height="1080" fill="#80a3b1"></rect>
+          <g>
+              <g transform="translate(424 833)">
+                  <path d="M186.2 -56.3C211 15.9 180 110.5 114.1 158.7C48.3 206.9 -52.4 208.8 -122.2 160C-192 111.2 -230.9 11.8 -205.4 -61.4C-179.9 -134.6 -89.9 -181.5 -4.6 -179.9C80.7 -178.4 161.4 -128.6 186.2 -56.3Z" stroke="#7812ff" fill="none" stroke-width="20">
+                  </path>
+              </g>
+              <g transform="translate(1467 24)">
+                  <path d="M140.1 -44.8C161.2 19.6 144.1 97.1 96.6 131.2C49.1 165.3 -28.7 156 -86.9 114.8C-145.1 73.7 -183.6 0.8 -165.9 -59C-148.1 -118.7 -74.1 -165.3 -7.3 -162.9C59.5 -160.5 118.9 -109.2 140.1 -44.8Z" stroke="#7812ff" fill="none" stroke-width="20">
+                  </path>
+              </g>
+              <g transform="translate(22 125)">
+                  <path d="M129.1 -39.4C145 7 120.2 69.1 77 98.8C33.8 128.4 -27.7 125.6 -69.3 95.4C-110.8 65.2 -132.4 7.6 -117.5 -37.4C-102.6 -82.4 -51.3 -114.8 2.6 -115.6C56.6 -116.5 113.2 -85.8 129.1 -39.4Z" stroke="#7812ff" fill="none" stroke-width="20">
+                  </path>
+              </g>
+          </g>
+    </svg>
+  </section>
 
-            </path></g><g transform="translate(1467 24)">
-                <path d="M140.1 -44.8C161.2 19.6 144.1 97.1 96.6 131.2C49.1 165.3 -28.7 156 -86.9 114.8C-145.1 73.7 -183.6 0.8 -165.9 -59C-148.1 -118.7 -74.1 -165.3 -7.3 -162.9C59.5 -160.5 118.9 -109.2 140.1 -44.8Z" stroke="#7812ff" fill="none" stroke-width="20"></path></g><g transform="translate(22 125)"><path d="M129.1 -39.4C145 7 120.2 69.1 77 98.8C33.8 128.4 -27.7 125.6 -69.3 95.4C-110.8 65.2 -132.4 7.6 -117.5 -37.4C-102.6 -82.4 -51.3 -114.8 2.6 -115.6C56.6 -116.5 113.2 -85.8 129.1 -39.4Z" stroke="#7812ff" fill="none" stroke-width="20">
+<section id= 'second'>
+  <article class="textblock">
+    <!-- <img src="siphamandla.jpeg" class="profile-image" /> -->
+    <svg width="400" class="animated-svg" height="100" xmlns="http://www.w3.org/2000/svg">
+        <text x="50" y="50" class="animated-text">Projects</text>
+    </svg>
 
-                </path></g></g></svg>
+    <div class="splide" aria-label="Splide Basic HTML Example" style="position: relative; z-index: 1000;">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="card">
+                <img src="https://wildawake.africa/wp-content/themes/wildawake/assets/img/wild-awake-nav-logo.svg" />
+                <h3>Wild Awake</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <footer>
+                  <button>Read More</button>
+                  <a>View Website</a>
+                </footer>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="card">
+              <img src="https://disrupt.co.za/wp-content/themes/blankslate/assets/img/disrupt.svg" />
+                <h3>Disrupt Media</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <footer>
+                  <button>Read More</button>
+                  <a>View Website</a>
+                </footer>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="card">
+              <img src="https://greensafaris.com/img/rebuild/green-safaris-logo.svg" />
+                <h3>Green Safaris Foundation</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <footer>
+                  <button>Read More</button>
+                  <a>View Website</a>
+                </footer>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="card">
+              <img src="https://xylofurniture.co.uk/wp-content/themes/xylo-furniture/img/xylo-furniture-logo-orange.png" />
+                <h3>Xylo Furniture</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <footer>
+                  <button>Read More</button>
+                  <a>View Website</a>
+                </footer>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="card">
+              <img src="https://www.chobesafarilodge.com/images/logo_58.png" />
+                <h3>UnderOne Botswana Sky</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <footer>
+                  <button>Read More</button>
+                  <a>View Website</a>
+                </footer>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="card">
+                <h3>Wild Awake</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <footer>
+                  <button>Read More</button>
+                  <a>View Website</a>
+                </footer>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-            <svg id="visual" style="width: 100%; height: auto;" viewBox="0 0 1920 1080" width="1920" height="1080"><rect width="1920" height="1080" fill="#7812ff"></rect><g><g transform="translate(331 202)"><path d="M180.7 -58.9C202.5 8.3 166.6 94.1 105.3 136.6C44.1 179.1 -42.4 178.3 -103.5 135.6C-164.5 92.9 -200 8.2 -178.5 -58.7C-157 -125.5 -78.5 -174.5 0.5 -174.6C79.5 -174.8 158.9 -126.1 180.7 -58.9Z" stroke="#80a3b1" fill="none" stroke-width="20"></path></g><g transform="translate(1834 1011)"><path d="M87.2 -28.5C98.9 7.7 84.6 52.1 51.7 77.5C18.8 102.9 -32.6 109.3 -67.3 85.7C-101.9 62.1 -119.9 8.7 -105.9 -30.7C-91.9 -70 -45.9 -95.3 -4.1 -93.9C37.8 -92.6 75.5 -64.7 87.2 -28.5Z" stroke="#80a3b1" fill="none" stroke-width="20"></path></g><g transform="translate(49 739)"><path d="M103.6 -33.4C116 4.4 95.2 53.4 59.1 78.9C23.1 104.5 -28 106.8 -60.6 83.2C-93.1 59.6 -107 10.2 -93.8 -28.8C-80.6 -67.8 -40.3 -96.3 2.7 -97.2C45.6 -98 91.2 -71.2 103.6 -33.4Z" stroke="#80a3b1" fill="none" stroke-width="20"></path></g></g></svg>
-            <svg id="visual" viewBox="0 0 1920 1080" width="1920" height="1080"><rect width="1920" height="1080" fill="#7812ff"></rect><g><g transform="translate(331 202)"><path d="M180.7 -58.9C202.5 8.3 166.6 94.1 105.3 136.6C44.1 179.1 -42.4 178.3 -103.5 135.6C-164.5 92.9 -200 8.2 -178.5 -58.7C-157 -125.5 -78.5 -174.5 0.5 -174.6C79.5 -174.8 158.9 -126.1 180.7 -58.9Z" fill="#80a3b1"></path></g><g transform="translate(1834 1011)"><path d="M87.2 -28.5C98.9 7.7 84.6 52.1 51.7 77.5C18.8 102.9 -32.6 109.3 -67.3 85.7C-101.9 62.1 -119.9 8.7 -105.9 -30.7C-91.9 -70 -45.9 -95.3 -4.1 -93.9C37.8 -92.6 75.5 -64.7 87.2 -28.5Z" fill="#80a3b1"></path></g><g transform="translate(49 739)"><path d="M103.6 -33.4C116 4.4 95.2 53.4 59.1 78.9C23.1 104.5 -28 106.8 -60.6 83.2C-93.1 59.6 -107 10.2 -93.8 -28.8C-80.6 -67.8 -40.3 -96.3 2.7 -97.2C45.6 -98 91.2 -71.2 103.6 -33.4Z" fill="#80a3b1"></path></g></g></svg>
-            <svg id="visual" viewBox="0 0 1920 1080" width="1920" height="1080"><rect width="1920" height="1080" fill="#7812ff"></rect><g><g transform="translate(746 563)"><path d="M195.8 -63.2C223.4 21.1 194.2 124.2 126.9 172.6C59.6 221 -45.9 214.6 -112.5 164.1C-179 113.5 -206.7 18.7 -181.5 -62.4C-156.3 -143.6 -78.1 -211 3 -211.9C84.2 -212.9 168.3 -147.5 195.8 -63.2Z" fill="#80a3b1"></path></g><g transform="translate(1426 778)"><path d="M111.5 -40.7C123.9 1.8 99 51.9 60.1 79.3C21.2 106.7 -31.6 111.4 -65.8 87.3C-100 63.3 -115.5 10.3 -101.5 -34.5C-87.4 -79.4 -43.7 -116.2 2.9 -117.2C49.6 -118.1 99.2 -83.2 111.5 -40.7Z" fill="#80a3b1"></path></g><g transform="translate(1798 145)"><path d="M112.1 -39C126.9 9 107.8 65.5 70.6 91C33.5 116.5 -21.6 111.1 -57.9 83.8C-94.2 56.5 -111.6 7.3 -98.8 -38C-86 -83.4 -43 -124.9 2.8 -125.8C48.7 -126.7 97.3 -87.1 112.1 -39Z" fill="#80a3b1"></path></g></g></svg>
-            <svg id="visual" viewBox="0 0 1920 1080" width="1920" height="1080"><rect width="1920" height="1080" fill="#80a3b1"></rect><g><g transform="translate(368 33)"><path d="M203.6 -65.5C228.7 11.1 189.6 109.1 117.7 161.2C45.7 213.3 -59.1 219.5 -128.4 170.6C-197.8 121.6 -231.6 17.7 -204.3 -61.9C-177 -141.6 -88.5 -196.9 0.4 -197C89.3 -197.1 178.5 -142.1 203.6 -65.5Z" fill="#7812ff"></path></g><g transform="translate(1432 979)"><path d="M169.3 -59.9C188.1 2.9 150.5 79.1 89.3 123.7C28.2 168.3 -56.5 181.3 -106.5 145.3C-156.5 109.3 -171.9 24.2 -148.3 -45.1C-124.8 -114.3 -62.4 -167.8 6.4 -169.9C75.2 -172 150.5 -122.7 169.3 -59.9Z" fill="#7812ff"></path></g><g transform="translate(285 956)"><path d="M82.8 -22.9C95.8 13.2 87 60.4 58 82C29 103.5 -20.2 99.5 -51 75.8C-81.8 52.1 -94.2 8.7 -82.6 -25.4C-71 -59.4 -35.5 -84.2 -0.3 -84.1C34.9 -84 69.8 -59 82.8 -22.9Z" fill="#7812ff"></path></g></g></svg>
-        </body>
+  </article>
+  <svg class="bg-svg" id="visual" style="width: 100%; height: auto;" viewBox="0 0 1920 1080" width="1920" height="1080"><rect width="1920" height="1080" fill="#7812ff"></rect><g><g transform="translate(331 202)"><path d="M180.7 -58.9C202.5 8.3 166.6 94.1 105.3 136.6C44.1 179.1 -42.4 178.3 -103.5 135.6C-164.5 92.9 -200 8.2 -178.5 -58.7C-157 -125.5 -78.5 -174.5 0.5 -174.6C79.5 -174.8 158.9 -126.1 180.7 -58.9Z" stroke="#80a3b1" fill="none" stroke-width="20"></path></g><g transform="translate(1834 1011)"><path d="M87.2 -28.5C98.9 7.7 84.6 52.1 51.7 77.5C18.8 102.9 -32.6 109.3 -67.3 85.7C-101.9 62.1 -119.9 8.7 -105.9 -30.7C-91.9 -70 -45.9 -95.3 -4.1 -93.9C37.8 -92.6 75.5 -64.7 87.2 -28.5Z" stroke="#80a3b1" fill="none" stroke-width="20"></path></g><g transform="translate(49 739)"><path d="M103.6 -33.4C116 4.4 95.2 53.4 59.1 78.9C23.1 104.5 -28 106.8 -60.6 83.2C-93.1 59.6 -107 10.2 -93.8 -28.8C-80.6 -67.8 -40.3 -96.3 2.7 -97.2C45.6 -98 91.2 -71.2 103.6 -33.4Z" stroke="#80a3b1" fill="none" stroke-width="20"></path></g></g></svg>
+</section>
+
+  <section id= 'third'>
+    <h1>Third</h1>
+    <svg class="bg-svg" id="visual" viewBox="0 0 1920 1080" width="1920" height="1080" style="width: 100%;"><rect width="1920" height="1080" fill="#7812ff"></rect><g><g transform="translate(746 563)"><path d="M195.8 -63.2C223.4 21.1 194.2 124.2 126.9 172.6C59.6 221 -45.9 214.6 -112.5 164.1C-179 113.5 -206.7 18.7 -181.5 -62.4C-156.3 -143.6 -78.1 -211 3 -211.9C84.2 -212.9 168.3 -147.5 195.8 -63.2Z" fill="#80a3b1"></path></g><g transform="translate(1426 778)"><path d="M111.5 -40.7C123.9 1.8 99 51.9 60.1 79.3C21.2 106.7 -31.6 111.4 -65.8 87.3C-100 63.3 -115.5 10.3 -101.5 -34.5C-87.4 -79.4 -43.7 -116.2 2.9 -117.2C49.6 -118.1 99.2 -83.2 111.5 -40.7Z" fill="#80a3b1"></path></g><g transform="translate(1798 145)"><path d="M112.1 -39C126.9 9 107.8 65.5 70.6 91C33.5 116.5 -21.6 111.1 -57.9 83.8C-94.2 56.5 -111.6 7.3 -98.8 -38C-86 -83.4 -43 -124.9 2.8 -125.8C48.7 -126.7 97.3 -87.1 112.1 -39Z" fill="#80a3b1"></path></g></g></svg>
+  </section>
+
+  <section class="bg-svg" id= 'fourth'>
+    <h1>Fourth</h1>
+    <svg id="visual" viewBox="0 0 1920 1080" width="1920" height="1080"><rect width="1920" height="1080" fill="#80a3b1"></rect><g><g transform="translate(368 33)"><path d="M203.6 -65.5C228.7 11.1 189.6 109.1 117.7 161.2C45.7 213.3 -59.1 219.5 -128.4 170.6C-197.8 121.6 -231.6 17.7 -204.3 -61.9C-177 -141.6 -88.5 -196.9 0.4 -197C89.3 -197.1 178.5 -142.1 203.6 -65.5Z" fill="#7812ff"></path></g><g transform="translate(1432 979)"><path d="M169.3 -59.9C188.1 2.9 150.5 79.1 89.3 123.7C28.2 168.3 -56.5 181.3 -106.5 145.3C-156.5 109.3 -171.9 24.2 -148.3 -45.1C-124.8 -114.3 -62.4 -167.8 6.4 -169.9C75.2 -172 150.5 -122.7 169.3 -59.9Z" fill="#7812ff"></path></g><g transform="translate(285 956)"><path d="M82.8 -22.9C95.8 13.2 87 60.4 58 82C29 103.5 -20.2 99.5 -51 75.8C-81.8 52.1 -94.2 8.7 -82.6 -25.4C-71 -59.4 -35.5 -84.2 -0.3 -84.1C34.9 -84 69.8 -59 82.8 -22.9Z" fill="#7812ff"></path></g></g></svg>
+  </section>
+</div>
+
+<script>
+document.addEventListener( 'DOMContentLoaded', function() {
+  var elms = document.getElementsByClassName( 'splide' );
+  console.log(elms)
+  for ( var i = 0; i < elms.length; i++ ) {
+    new Splide( elms[ i ],{'perPage':3, 'gap':10, 'pagination':false,'height':'300px' } ).mount();
+  }
+})
+</script>
+
+</body>
 </html>
