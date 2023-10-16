@@ -3,469 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sphah - WordPress Developer Portfolio</title>
+    <title>Siphamandla Mbokazi - WordPress Developer Portfolio</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="description" content="Full Stack Web Developer based in Durban, Siphamandla is ready to turn your sofware dreams to reality.">
+    <meta name="keywords" content="Web Deveper, WordPress Theme and Plugin Developer, HTML,CSS,JavaScript and PHP">
+    <meta name="robot" content="index follow" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Dancing Script', cursive;
-font-family: 'Montserrat', sans-serif;
-font-family: 'Nunito Sans', sans-serif;
-
-}
-
-:root {
---primary-color: #D96AA7;
---secondary-color: #422C73;
---complimentary-color: #88BFB5;
---contrast-color: #F2E527;
---light-color: #D2A9D9;
-}
-
-.container {
-  background: #7aa3b2;
-  min-height: 100vh;
-  font-family: Montserrat, sans-serif;
-}
-
-
-nav{
-  position: fixed;
-  z-index: 100;
-  top: 50%;
-  transform: translateY(-50%);
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-nav div{
-	text-align: center;
-  padding: 0;
-}
-
-nav a {
-  position: relative;
-  z-index: 1;
-  display: block;
-  font-family: 'Montserrat', sans-serif;
-	position: relative;
-	width: 80px;
-	cursor: pointer;
-	background: #6200ff;
-	text-transform: uppercase;
-	transition:all .4s ease-out;
-	height: 80px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-nav a:after {
-	position: absolute;
-	background: white;
-	color: #6200ff;
-  font-size: 16px;
-	top:0;
-	left: 80px;
-	width: 80px; 
-	height: 80px;
-  opacity:.5;
-  transform: perspective(400px) rotateY(90deg);
-	transform-origin: 0 100%;
-	transition:all .4s ease-out;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-nav a:nth-child(1):after { 
-	content: "Home";
-}
-nav a:nth-child(2):after { 
-	content: "Work";
-}
-nav a:nth-child(3):after { 
-	content: "Skills";
-}
-nav a:nth-child(4):after { 
-	content: "Contact";
-}
-
-nav a:hover {
-	transform: translateX(-70px);
-}
-
-nav a:hover:after {
-  opacity: 1;
-	transform: perspective(400px) rotateY(0deg) scale(1) ;
-}
-nav a{
-  color: #fff;
-  text-decoration: none;
-}
-
-.section {
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    width: 0;
-    opacity: 0;
-    transition: all ease-in .5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: center;
-    background-size: cover;
-}
-
-
-.bg-svg{
-  width: 100%; 
-  height: auto; 
-  position: absolute; 
-  top:0; 
-  z-index: -1; 
-  left: 0; 
-}
-
-.section h1 {
-    color: #fff;
-    font-size: 50px;
-    text-transform: uppercase;
-    opacity: 0;
-}
-
-/* Styles applied on trigger */
-.section:target {
-    opacity: 1;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-}
-
-.section:target article {
-    opacity: 0;
-    animation: 2s fadeIn forwards .5s;
-}
-
-.animated-svg{
-  position: static;
-  z-index: auto;
-  width: auto;
-  height: auto;
-}
-
-.animated-text {
-    font-family: Arial, sans-serif;
-    fill: none;
-    stroke: #fff;
-    font-weight: 700;
-    stroke-width: 2;
-    stroke-dasharray: 400;
-    stroke-dashoffset: 400;
-    animation: draw 3s ease-in-out alternate-reverse infinite;
-    font-size: 45px;
-    text-transform: uppercase;
-}
-
-@keyframes draw {
-    0% {
-        stroke-dashoffset: 400;
-    }
-    100% {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes fadeIn {
-    100% { opacity:1 }
-}
-.profile-image{
-  width:150px; 
-  height: 150px; 
-  object-position:center top; 
-  display: block; 
-  margin:auto; 
-  border-radius:100%; 
-  object-fit: cover;
-}
-
-.textblock{
-  color: #fff; 
-  margin: auto;
-  max-width: 800px; 
-  width: 100%; 
-  text-align: center;
-}
-
-.card{
-  display: grid;
-  gap: 20px;
-  padding:20px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-
-.card img{
-  height: 30px;
-  margin: auto;
-  display: block;
-}
-h3{
-  font-size: 17px;
-  margin-top: 10px;
-}
-</style>
-<style>
-  .khd-popup__background{
-      width: 100vw; 
-      height:100vh; 
-      background-color: rgb(0,0,0,.5);
-      position: fixed;
-      top:0; 
-      left: 0;
-      bottom:0;
-      right:0;
-      transition: all 400ms cubic-bezier(0.19, 1, 0.22, 1);
-      align-items: center;
-      overflow: hidden;
-      display: flex;
-      transform: translateY(-100%);
-      opacity: 0;
-  }
-
-  .khd-popup__background.khd-popup__background--active{
-    z-index: 100;
-    transform: translateY(0);
-      opacity: 1;
-  }
-  .khd-popup__content{
-      background-color: #eee;
-      border-radius: 5px;
-      max-width: 800px;
-      width: 100%;
-      margin: auto;
-      height: 500px;
-      overflow: auto;
-      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  }
-  .khd-popup__close-button{
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background-color: transparent;
-      cursor: pointer;
-      z-index: 1;
-      color:#fff;
-      width:30px;
-      height:30px;
-      background-image: url(./close_white.svg);
-      height: 30px;
-      width: 30px;
-      background-size: contain;
-      transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      text-indent: 500%;
-      border: 0;
-      
-  }
-  .khd-popup__image{
-    width: 100%;
-    height: 500px; 
-    object-fit: cover; 
-    object-position: center top;
-  }
-  .khd-popup__description h3{
-    font-size: 25px;
-    color: #7aa3b2;
-    text-transform: uppercase;
-  }
-  .khd-popup__description>section{
-    display: grid;
-    row-gap: 20px;
-  }
-  .khd-popup__description strong{
-    color: #333;
-  }
-  .khd-popup__description ul{
-    padding-left: 20px;
-    color: #555;
-  }
-  .khd-popup__content header{
-    gap: 5px;
-  }
-
-  
-</style>
-
-<style>
-/* CSS */
-.button-89 {
-  --b: 1px;   /* border thickness */
-  --s: .4rem; /* size of the corner */
-  --color: #fff;
-  
-  padding: calc(.3rem + var(--s)) calc(.5rem + var(--s));
-  color: var(--color);
-  --_p: var(--s);
-  background:
-    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
-    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-  transition: .3s linear, color 0s, background-color 0s;
-  outline: var(--b) solid #0000;
-  outline-offset: .6em;
-  font-size: 16px;
-
-  border: 0;
-
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  cursor: pointer;
-}
-
-.button-89:hover,
-.button-89:focus-visible{
-  --_p: 0px;
-  outline-color: var(--color);
-  outline-offset: .05em;
-}
-
-.button-89:active {
-  background: var(--color);
-  color: #fff;
-}
-
-.link{
-  text-decoration: none;
-  border-bottom: 1px solid #fff;
-  display: inline-block;
-  padding:5px 10px;
-  margin-left: 10px;
-  color: #fff;
-  position: relative;
-  cursor: pointer;
-}
-.link::after{
-  font-family: "Material Symbols Outlined";
-  content: "\f1df";
-  position: relative;
-  top: 3px;
-  left: 5px;
-  transition: all 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-.link::before{
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  background-color: #fff;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-.link:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-.link:hover::after{
-  left: 10px;
-}
-.link:hover{
-  border-bottom: none;
-}
-</style>
-<style>
-.interiorText {
-    background: #fff;
-    padding: 20px;
-    border-radius: 0 0 20px 20px;
-    overflow: auto;
-}
-.khd-form-field__row {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-    margin-bottom: 50px;
-}
-.khd-form-field__column {
-    width: 100%;
-}
-.khd-form-field__column label {
-    display: block;
-}
-.khd-form-field__column input:not( .khd-form-field__column input[type="submit"]) {
-    border: 1px solid #cacaca;
-    border-radius: 10px;
-    height: 2.5rem;
-    margin: 0;
-    margin-top: 10px;
-    overflow: auto;
-    padding: 10px;
-    resize: none;
-    transition: background-color 70ms cubic-bezier(.2,0,.38,.9),outline 70ms cubic-bezier(.2,0,.38,.9);
-    vertical-align: baseline;
-    width: 100%;
-}
-.khd-form-field__column--submit-button-right {
-    display: flex;
-    justify-content: end;
-}
-</style>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/simui-code@1.0.3/css/simui.min.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/simui-code@1.0.3/css/simui.min.css">
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-
 <nav>
   <div>
-    <a href="#first"><span class="material-symbols-outlined">home</span></a>
-    <a href="#second"><span class="material-symbols-outlined">work</span></a>
-    <a href="#third"><span class="material-symbols-outlined">build</span></a>
-    <a href="#fourth"><span class="material-symbols-outlined">call</span></a>
+    <a href="#intro"><span class="material-symbols-outlined">home</span></a>
+    <a href="#projects"><span class="material-symbols-outlined">work</span></a>
+    <a href="#skills"><span class="material-symbols-outlined">build</span></a>
+    <a href="#contact"><span class="material-symbols-outlined">call</span></a>
   </div>
 </nav>
 <div class= 'container'> 
-  <section class="section" id= 'first'>
-    <article class="textblock">
-        <img src="siphamandla.jpeg" class="profile-image" />
-        <svg width="400" class="animated-svg" height="100" xmlns="http://www.w3.org/2000/svg">
+
+<!-- Contact CTAs -->
+<div style="position: fixed; top: 0; right: 0; z-index: 100; padding: 5px 15px; background-color: #fff; border-radius: 0 0 20px 20px;">
+  <a href="https://wa.me/0638593652" target="_top"><img style="width: 40px;" src="img/whatsapp.svg" alt="Whatsapp Siphamandla"></a>
+  <a href="mailto:siphamandla@wildweb.co.za?subject='WordPress Developer Application Enquiry" target="_top"><img style="width: 40px;" src="img/email.svg" alt="Email Siphamandla"></a>
+</div>
+
+
+<!-- Chambers -->
+  <section class="section" id= "intro">
+    <article class="textblock" style="max-width: 700px; padding: 20px;">
+        <img src="img/siphamandla.jpeg" class="profile-image" alt="Siphamandla Mbokazi Deveper Profile" />
+        <svg width="400" class="animated-svg" height="70" xmlns="http://www.w3.org/2000/svg">
             <text x="50" y="50" class="animated-text">Siphamandla</text>
         </svg>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Quam aspernatur sed consequuntur tempore nihil inventore accusantium, quaerat, 
-          recusandae soluta earum quae. Nobis optio assumenda magnam quasi debitis perspiciatis quo porro.
-        </p>
+        <div>
+          <p><strong>WordPress Developer, Durban, South Africa</strong></p>
+          <p>
+            Being a Software Engineer is not only based on what tools you're familiar with, but it is more about how efficient you are ( in terms of time and execution) in solving software-related problems. Picking the right tech stack is crucial for your project's success.
+          </p>
+          <p>
+            WordPress can significantly reduce backend complexity while allowing developers to customize the CMS with ease to create bespoke solutions for their projects.In short words, WordPress is a great tool for most websites.
+          </p>
+      </div>
     </article>
-    <svg class="bg-svg" viewBox="0 0 1920 1080" width="1920" height="1080">
-          <rect width="1920" height="1080" fill="#80a3b1"></rect>
-          <g>
-              <g transform="translate(424 833)">
-                  <path d="M186.2 -56.3C211 15.9 180 110.5 114.1 158.7C48.3 206.9 -52.4 208.8 -122.2 160C-192 111.2 -230.9 11.8 -205.4 -61.4C-179.9 -134.6 -89.9 -181.5 -4.6 -179.9C80.7 -178.4 161.4 -128.6 186.2 -56.3Z" stroke="#7812ff" fill="none" stroke-width="20">
-                  </path>
-              </g>
-              <g transform="translate(1467 24)">
-                  <path d="M140.1 -44.8C161.2 19.6 144.1 97.1 96.6 131.2C49.1 165.3 -28.7 156 -86.9 114.8C-145.1 73.7 -183.6 0.8 -165.9 -59C-148.1 -118.7 -74.1 -165.3 -7.3 -162.9C59.5 -160.5 118.9 -109.2 140.1 -44.8Z" stroke="#7812ff" fill="none" stroke-width="20">
-                  </path>
-              </g>
-              <g transform="translate(22 125)">
-                  <path d="M129.1 -39.4C145 7 120.2 69.1 77 98.8C33.8 128.4 -27.7 125.6 -69.3 95.4C-110.8 65.2 -132.4 7.6 -117.5 -37.4C-102.6 -82.4 -51.3 -114.8 2.6 -115.6C56.6 -116.5 113.2 -85.8 129.1 -39.4Z" stroke="#7812ff" fill="none" stroke-width="20">
-                  </path>
-              </g>
-          </g>
-    </svg>
   </section>
 
-  <section class="section" id= 'second'>
+  <section class="section" id= "projects">
     <article class="textblock" style="max-width: 1000px;">
       <svg width="400" class="animated-svg" height="100" xmlns="http://www.w3.org/2000/svg">
           <text x="50" y="50" class="animated-text">Projects</text>
@@ -476,58 +65,132 @@ h3{
             <li class="splide__slide">
               <div class="card">
                   <header>
-                    <img src="https://wildawake.africa/wp-content/themes/wildawake/assets/img/wild-awake-nav-logo.svg" />
+                    <img src="img/wildawake.svg" alt="Project Developed by Siphamandla - WildAwake logo"/>
                     <h3>Wild Awake</h3>
                   </header>
                   <footer>
-                    <button class="button-89" data-toggle="popup1|khd-popup__background--active|click">Read More</button>
-                    <a class="link">View Website</a>
+                    <button class="button-89" data-toggle="wildawake|khd-popup__background--active|click">Read More</button>
+                    <a class="link" target="_blank" href="https://wildawake.africa">View Website</a>
                   </footer>         
               </div>
             </li>
             <li class="splide__slide">
               <div class="card">
                 <header>
-                  <img src="https://disrupt.co.za/wp-content/themes/blankslate/assets/img/disrupt.svg" />
+                  <img src="/img/disrupt.svg" alt="Project Developed by Siphamandla - Disrupt Media logo"/>
                   <h3>Disrupt Media</h3>
                 </header>
                 <footer>
-                  <button class="button-89">Read More</button>
-                  <a class="link">View Website</a>
+                  <button class="button-89" data-toggle="disrupt|khd-popup__background--active|click">Read More</button>
+                  <a class="link" target="_blank" href="https://disrupt.co.za/">View Website</a>
                 </footer>
               </div>
             </li>
             <li class="splide__slide">
               <div class="card">
                 <header>
-                  <img src="https://greensafaris.com/img/rebuild/green-safaris-logo.svg" />
+                  <img src="img/greensafaris.svg" alt="Project Developed by Siphamandla - Green Safaris Foundation Logo"/>
                   <h3>Green Safaris Foundation</h3>
                 </header>
                   <footer>
-                    <button class="button-89">Read More</button>
-                    <a class="link">View Website</a>
+                    <button class="button-89" data-toggle="green-safaris-foundation|khd-popup__background--active|click">Read More</button>
+                    <a class="link" target="_blank" href="https://greensafaris-foundation.com">View Website</a>
                   </footer>
               </div>
             </li>
             <li class="splide__slide">
               <div class="card">
                 <header>
-                  <img src="https://xylofurniture.co.uk/wp-content/themes/xylo-furniture/img/xylo-furniture-logo-orange.png" />
+                  <img src="img/xylo.png" alt="Project Developed by Siphamandla - Xylo Furniture logo"/>
                   <h3>Xylo Furniture</h3>
                 </header>
                 <footer>
-                  <button class="button-89">Read More</button>
-                  <a class="link">View Website</a>
+                  <button class="button-89" data-toggle="xylo|khd-popup__background--active|click">Read More</button>
+                  <a class="link" target="_blank" href="https://xylofurniture.co.uk">View Website</a>
                 </footer>
               </div>
             </li>
             <li class="splide__slide">
               <div class="card">
-                <img src="https://www.chobesafarilodge.com/images/logo_58.png" />
-                  <h3>UnderOne Botswana Sky</h3>
+                  <header>
+                    <img src="img/greensafaris.svg" alt="Project Developed by Siphamandla - Green Safaris logo"/>
+                    <h3>Green Safaris</h3>
+                  </header>
                   <footer>
-                    <button class="button-89">Read More</button>
-                    <a class="link">View Website </a>
+                    <button class="button-89" data-toggle="greensafaris|khd-popup__background--active|click">Read More</button>
+                    <a class="link" target="_blank" href="https://greensafaris.com">View Website</a>
+                  </footer>         
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="card">
+                  <header>
+                    <img src="img/wildweb.svg" alt="Project Developed by Siphamandla - WildWeb logo" />
+                    <h3>WildWeb</h3>
+                  </header>
+                  <footer>
+                    <button class="button-89" data-toggle="wildweb|khd-popup__background--active|click">Read More</button>
+                    <a class="link" target="_blank" href="https://wildweb.co.za">View Website</a>
+                  </footer>         
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="card">
+                <header>
+                  <img src="/img/wisdom-and-youth.png" alt="Project Developed by Siphamandla - Wisdom amd Youth logo"/>
+                  <h3>Wisdom and Youth</h3>
+                </header>
+                <footer>
+                  <button class="button-89" data-toggle="disrupt|khd-popup__background--active|click">Read More</button>
+                  <a class="link" target="_blank" href="https://disrupt.co.za/">View Website</a>
+                </footer>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="card">
+                  <header>
+                    <img src="img/printwild.svg" alt="Project Developed by Siphamandla - PrintWild logo"/>
+                    <h3>Printwild</h3>
+                  </header>
+                  <footer>
+                    <button class="button-89" data-toggle="printwild|khd-popup__background--active|click">Read More</button>
+                    <a class="link" target="_blank" href="https://printwild.co.za">View Website</a>
+                  </footer>         
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="card">
+                  <header>
+                    <img src="img/yuppiestay.png" alt="Project Developed by Siphamandla - Yuppiestay logo"/>
+                    <h3>Yuppiestay</h3>
+                  </header>
+                  <footer>
+                    <button class="button-89" data-toggle="yuppiestay|khd-popup__background--active|click">Read More</button>
+                    <a class="link" target="_blank" href="https://www.yuppiestay.com">View Website</a>
+                  </footer>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="card">
+                  <header>
+                    <img src="img/zct.png" />
+                    <h3>Zululand Conservation Trust</h3>
+                  </header>
+                  <footer>
+                    <button class="button-89" data-toggle="zct|khd-popup__background--active|click">Read More</button>
+                    <a class="link" target="_blank" href="https://zululandconservationtrust.org">View Website</a>
+                  </footer>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="card">
+                  <header>
+                    <img src="img/keynstay.png" alt="Project Developed by Siphamandla - KeynStay logo" />
+                    <h3>KeynStay</h3>
+                  </header>
+                  <footer>
+                    <button class="button-89" data-toggle="keynstay|khd-popup__background--active|click">Read More</button>
+                    <a class="link" target="_blank" href="https://keynstay.com">View Website</a>
                   </footer>
               </div>
             </li>
@@ -535,26 +198,24 @@ h3{
         </div>
       </div>
     </article>
-    <svg class="bg-svg" id="visual" style="width: 100%; height: auto;" viewBox="0 0 1920 1080" width="1920" height="1080"><rect width="1920" height="1080" fill="#7812ff"></rect><g><g transform="translate(331 202)"><path d="M180.7 -58.9C202.5 8.3 166.6 94.1 105.3 136.6C44.1 179.1 -42.4 178.3 -103.5 135.6C-164.5 92.9 -200 8.2 -178.5 -58.7C-157 -125.5 -78.5 -174.5 0.5 -174.6C79.5 -174.8 158.9 -126.1 180.7 -58.9Z" stroke="#80a3b1" fill="none" stroke-width="20"></path></g><g transform="translate(1834 1011)"><path d="M87.2 -28.5C98.9 7.7 84.6 52.1 51.7 77.5C18.8 102.9 -32.6 109.3 -67.3 85.7C-101.9 62.1 -119.9 8.7 -105.9 -30.7C-91.9 -70 -45.9 -95.3 -4.1 -93.9C37.8 -92.6 75.5 -64.7 87.2 -28.5Z" stroke="#80a3b1" fill="none" stroke-width="20"></path></g><g transform="translate(49 739)"><path d="M103.6 -33.4C116 4.4 95.2 53.4 59.1 78.9C23.1 104.5 -28 106.8 -60.6 83.2C-93.1 59.6 -107 10.2 -93.8 -28.8C-80.6 -67.8 -40.3 -96.3 2.7 -97.2C45.6 -98 91.2 -71.2 103.6 -33.4Z" stroke="#80a3b1" fill="none" stroke-width="20"></path></g></g></svg>
   </section>
 
-  <section class="section" id='third'>
-
+  <section class="section" id="skills">
     <article class="textblock" style="max-width: 1000px;">
       <svg width="400" class="animated-svg" height="100" xmlns="http://www.w3.org/2000/svg">
           <text x="50" y="50" class="animated-text">Skills</text>
       </svg>
-      <div class="splide" aria-label="Portfolio Carousel" style="position: relative; z-index: 1000;">
+      <div class="splide Skills" aria-label="Skills Carousel" style="position: relative; z-index: 1000;">
         <div class="splide__track">
           <ul class="splide__list">
             <li class="splide__slide">
               <div class="card">
                   <header>
-                    <img src="https://wildawake.africa/wp-content/themes/wildawake/assets/img/wild-awake-nav-logo.svg" />
-                    <h3>Wild Awake</h3>
+                    <img src="img/backend.svg" alt="Backend Web Developer Skills by Siphamandla"/>
+                    <h3>Backend</h3>
                   </header>
                   <footer>
-                    <button class="button-89" data-toggle="popup1|khd-popup__background--active|click">Read More</button>
+                    <button class="button-89" data-toggle="backend|khd-popup__background--active|click">Read More</button>
               
                   </footer>         
               </div>
@@ -562,11 +223,11 @@ h3{
             <li class="splide__slide">
               <div class="card">
                 <header>
-                  <img src="https://disrupt.co.za/wp-content/themes/blankslate/assets/img/disrupt.svg" />
-                  <h3>Disrupt Media</h3>
+                  <img src="img/frontend.svg" alt="Frontend Web Developer Skills by Siphamandla"/>
+                  <h3>Frontend</h3>
                 </header>
                 <footer>
-                  <button class="button-89">Read More</button>
+                  <button class="button-89" data-toggle="frontend|khd-popup__background--active|click">Read More</button>
         
                 </footer>
               </div>
@@ -574,11 +235,22 @@ h3{
             <li class="splide__slide">
               <div class="card">
                 <header>
-                  <img src="https://greensafaris.com/img/rebuild/green-safaris-logo.svg" />
-                  <h3>Green Safaris Foundation</h3>
+                  <img src="img/git.svg" alt="Version Control Web Developer Skills by Siphamandla" />
+                  <h3>Version Control</h3>
                 </header>
                   <footer>
-                    <button class="button-89">Read More</button>
+                    <button class="button-89" data-toggle="version-control|khd-popup__background--active|click">Read More</button>
+                  </footer>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="card">
+                <header>
+                  <img src="img/admin.svg" alt="Admin Web Developer Skills by Siphamandla"/>
+                  <h3>Admin</h3>
+                </header>
+                  <footer>
+                    <button class="button-89" data-toggle="admin|khd-popup__background--active|click">Read More</button>
                   </footer>
               </div>
             </li>
@@ -586,88 +258,781 @@ h3{
         </div>
       </div>
     </article>
-    <svg id="visual" class="bg-svg" viewBox="0 0 1920 1080" width="1920" height="1080"><rect width="1920" height="1080" fill="#80a3b1"></rect><g><g transform="translate(368 33)"><path d="M203.6 -65.5C228.7 11.1 189.6 109.1 117.7 161.2C45.7 213.3 -59.1 219.5 -128.4 170.6C-197.8 121.6 -231.6 17.7 -204.3 -61.9C-177 -141.6 -88.5 -196.9 0.4 -197C89.3 -197.1 178.5 -142.1 203.6 -65.5Z" fill="#7812ff"></path></g><g transform="translate(1432 979)"><path d="M169.3 -59.9C188.1 2.9 150.5 79.1 89.3 123.7C28.2 168.3 -56.5 181.3 -106.5 145.3C-156.5 109.3 -171.9 24.2 -148.3 -45.1C-124.8 -114.3 -62.4 -167.8 6.4 -169.9C75.2 -172 150.5 -122.7 169.3 -59.9Z" fill="#7812ff"></path></g><g transform="translate(285 956)"><path d="M82.8 -22.9C95.8 13.2 87 60.4 58 82C29 103.5 -20.2 99.5 -51 75.8C-81.8 52.1 -94.2 8.7 -82.6 -25.4C-71 -59.4 -35.5 -84.2 -0.3 -84.1C34.9 -84 69.8 -59 82.8 -22.9Z" fill="#7812ff"></path></g></g></svg>
   </section>
 
-  <section class="bg-svg section" id= 'fourth'>
+  <section class="bg-svg section" id="contact">
     <article class="textblock" style="max-width:800px;">
-      <div class="interiorText">
-          <p>
-            build funeral cover for almost anyone*. No forms, No medicals
-          </p>
-          <p>From the comfort of your home, or anywhere in the world using your phone or laptop.</p>
-        <form class="khd-form-field__row">
-          <div class="khd-form-field__column">
-            <label for="nameAndSurname">Name and Surname</label>
-            <input type="text" id="nameAndSurname" name="name_and_surname" placeholder="Name and Surname" required="">
-          </div>
-          <div class="khd-form-field__column">
-            <label for="contactNumber">Contact number</label>
-            <input type="tel" id="contactNumber" name="contact_number" placeholder="Contact number">
-          </div>					
-          <div class="khd-form-field__column">
-            <label for="emailAddress">Email address</label>
-            <input type="email" id="emailAddress" name="email_address" placeholder="Email address">
-          </div>
-          <div class="khd-form-field__column khd-form-field__column--submit-button-right">
-            <input type="Submit" value="Send" id="submit" name="submit" class="button-89">
-          </div>
-        </form> 
-        <a target="_top" href="https://wa.me/+26879628051" class="button">Whatsapp Us</a>
+      <div class="khd-form">
+      <p style="text-align: center;">
+        <svg width="400" class="animated-svg" height="70" xmlns="http://www.w3.org/2000/svg">
+          <text x="50" y="50" class="animated-text">Contact</text>
+        </svg>
+      </p>
+          <form class="khd-form-field__row" action="index.php" method="POST">
+            <div class="khd-form-field__column">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name_and_surname" placeholder="Name" required="">
+            </div>
+            <div class="khd-form-field__column">
+              <label for="contact">Contact number</label>
+              <input type="tel" id="phone" name="contact" placeholder="Contact number">
+            </div>					
+            <div class="khd-form-field__column">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="Email address">
+            </div>
+            <div class="khd-form-field__column">
+              <label for="email">Message</label>
+              <textarea name="message" id="message" cols="50" rows="2" placeholder="Email address"></textarea>
+            </div>
+            <div class="khd-form-field__column khd-form-field__column--submit-button-right">
+              <input type="Submit" value="Send" id="submit" name="submit" class="button-89">
+            </div>
+          </form> 
       </div>
     </article>
-
-    <svg class="bg-svg" id="visual" viewBox="0 0 1920 1080" width="1920" height="1080" style="width: 100%;"><rect width="1920" height="1080" fill="#7812ff"></rect><g><g transform="translate(746 563)"><path d="M195.8 -63.2C223.4 21.1 194.2 124.2 126.9 172.6C59.6 221 -45.9 214.6 -112.5 164.1C-179 113.5 -206.7 18.7 -181.5 -62.4C-156.3 -143.6 -78.1 -211 3 -211.9C84.2 -212.9 168.3 -147.5 195.8 -63.2Z" fill="#80a3b1"></path></g><g transform="translate(1426 778)"><path d="M111.5 -40.7C123.9 1.8 99 51.9 60.1 79.3C21.2 106.7 -31.6 111.4 -65.8 87.3C-100 63.3 -115.5 10.3 -101.5 -34.5C-87.4 -79.4 -43.7 -116.2 2.9 -117.2C49.6 -118.1 99.2 -83.2 111.5 -40.7Z" fill="#80a3b1"></path></g><g transform="translate(1798 145)"><path d="M112.1 -39C126.9 9 107.8 65.5 70.6 91C33.5 116.5 -21.6 111.1 -57.9 83.8C-94.2 56.5 -111.6 7.3 -98.8 -38C-86 -83.4 -43 -124.9 2.8 -125.8C48.7 -126.7 97.3 -87.1 112.1 -39Z" fill="#80a3b1"></path></g></g></svg>
   </section>
-  <!--popups-->
-  <div class="khd-popup__background khd-popup__background--active" id="popup1">
-    <button class="khd-popup__close-button" data-toggle="popup1|khd-popup__background--active|click">Close</button>
-    <div class="khd-popup__content su-grid--fr2 su-align__center su-gap--sm">
-      <img src="wildawake.png" class="khd-popup__image"/>
-      <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
-        <h3>WildAwake</h3>
-        <section>
-          <header class="su-align__left--center su-grid--a2">
-            <span class="material-symbols-outlined">info</span>
-            <strong>Description</strong>
-          </header>
-          <ul>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore mollitia dicta molestias, porro excepturi quam molestiae dolorem.</li>
-         </ul>
-        </section>
-        <section>
-          <header class="su-align__left--center su-grid--a2">
-            <span class="material-symbols-outlined">person</span>
-            <strong>Contribution</strong>
-          </header>
-          <ul>
-            <li>Full Development</li>
-         </ul>
-        </section>
-        <section>
-          <header class="su-align__left--center su-grid--a2">
-            <span class="material-symbols-outlined">code</span>
-            <strong>Technologies</strong>
-          </header>
-          <ul>
-            <li>Custom WordPress Theme</li>
-            <li>Sessions</li>
-            <li>Ajax</li>
-            <li>HTML, CSS and JavaScript</li>
-         </ul>
-        </section>
+
+  <!-- Popups -->
+  <!--projects-->
+    <div class="khd-popup__background" id="wildawake">
+      <button class="khd-popup__close-button" data-toggle="wildawake|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-align__center su-gap--sm">
+        <img src="img/wildawake.jpg" alt="Project Developed by Siphamandla - WildAwake Design" class="khd-popup__image"/>
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>WildAwake</h3>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">info</span>
+              <strong>Description</strong>
+            </header>
+            <ul>
+              <li>
+                <p>
+                  The idea behind the project is to help users select their custom Safari and Consciousness experiences they'd like to have for their adventure. I built a system that allow one to  
+                  select any package that they're interested in as they're browsing the website and then have them fill up a form that sends all selected interests (along with user details, such as how much a user is willing to spend ) to the website owner.
+                </p>
+                <p>
+                  I had to use patterns such as WordPress ajax, sessions (I have plugin that also keep track of sessions which was very useful for debugging ) and JQuery for keeping track of user's interests.
+                  I also created a list of reusable UI widget in the form of shortcodes and custom blocks to allow admin to create posts and pages using these widgets.
+                </p>
+              </li>
+          </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Contribution</strong>
+            </header>
+            <ul>
+              <li>Full Development</li>
+          </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">code</span>
+              <strong>Technologies</strong>
+            </header>
+            <ul>
+              <li>Custom WordPress Theme</li>
+              <li>Reusable UI Widget using Shortcodes and Custom Dynamic Blocks</li>
+              <li>Advance Custom Fields</li>
+              <li>Sessions in WordPress</li>
+              <li>Ajax</li>
+              <li>HTML, CSS and JavaScript</li>
+          </ul>
+          </section>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="khd-popup__background" id="green-safaris-foundation">
+      <button class="khd-popup__close-button" data-toggle="green-safaris-foundation|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-align__center su-gap--sm">
+        <img src="img/greensafaris-foundation.jpg" class="khd-popup__image" alt="Project Developed by Siphamandla - Green Safaris Foundation Design"/>
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>Green Safaris Foundation</h3>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">info</span>
+              <strong>Description</strong>
+            </header>
+            <ul>
+              <li>
+                <p>
+                  The Green Safaris Foundation was established to generate and deploy community project funding to support local 
+                  community development, wildlife conservation and ecosystem preservation in Sub-Saharan Africa.
+                </p>
+                <p>
+                  I really enjoy working on this project with our content creator making content updates as I was working on the code. 
+                  I enjoyed the process because this is a non-profit project aim to help the youth and I think that is special.
+                </p>
+              </li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Contribution</strong>
+            </header>
+            <ul>
+              <li>Full Development</li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">code</span>
+              <strong>Technologies</strong>
+            </header>
+            <ul>
+              <li>WordPress Custom Theme</li>
+              <li>Donation System</li>
+              <li>Reusable UI Widget using Custom Dynamic Blocks</li>
+              <li>Advance Custom Fields</li>
+              <li>Donation System</li>
+              <li>HTML, CSS and JavaScript</li>
+           </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="khd-popup__background" id="xylo">
+      <button class="khd-popup__close-button" data-toggle="xylo|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-align__center su-gap--sm">
+        <img src="img/xylo.jpg" class="khd-popup__image" alt="Project Developed by Siphamandla - Xylo Design"/>
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>Xylo</h3>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">info</span>
+              <strong>Description</strong>
+            </header>
+            <ul>
+              <li>
+                <p>
+                  Beautifully hand-crafted bespoke furniture and cabinetry, with a timeless design and heirloom quality.
+                </p>
+                <p>
+                 This was one of the early project built using my Simui Frontend framework, and I must admin I enjoyed the developer experience. The project was very quick to build even though some of it's features were removed because the client was not ready to make use of them.
+                </p>
+              </li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Contribution</strong>
+            </header>
+            <ul>
+              <li>Full Development</li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">code</span>
+              <strong>Technologies</strong>
+            </header>
+            <ul>
+              <li>WordPress Custom Theme</li>
+              <li>Custom Dynamic Blocks</li>
+              <li>Advance Custom Fields</li>
+              <li>HTML, CSS and JavaScript</li>
+              <li>Simui Code Frontend System</li>
+           </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="khd-popup__background" id="disrupt">
+      <button class="khd-popup__close-button" data-toggle="disrupt|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-align__center su-gap--sm">
+        <img src="img/disrupt.jpg" class="khd-popup__image" alt="Project Developed by Siphamandla - Disrupt Media Design"/>
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>Disrupt Media</h3>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">info</span>
+              <strong>Description</strong>
+            </header>
+            <ul>
+              <li>
+                <p>
+                  Disrupt Media help software founders, marketers and sales teams showcase
+                  their platforms with the power of animation and motion graphics.
+                <p>
+                  The Client made the design, it is a bit of a mission to work with a designer who is fundamentally as web design or understand the limitations of Responsive Web Development. The design was provided in Illustrator.
+                  I had to try to get the design to be pixel perfact while manage the designers expectation in about web design limitions.
+                </p>
+              </li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Contribution</strong>
+            </header>
+            <ul>
+              <li>Full Development</li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">code</span>
+              <strong>Technologies</strong>
+            </header>
+            <ul>
+              <li>WordPress Custom Theme</li>
+              <li>Web Animations</li>
+              <li>Reusable UI Widget using Custom Dynamic Blocks</li>
+              <li>Advance Custom Fields</li>
+              <li>HTML, CSS and JavaScript</li>
+              <li>Ability to change some global UI settings using customizer.</li>
+           </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="khd-popup__background" id="printwild">
+      <button class="khd-popup__close-button" data-toggle="printwild|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-align__center su-gap--sm">
+        <img src="img/printwild.jpg" class="khd-popup__image" alt="Project Developed by Siphamandla - PrintWild Design"/>
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>PrintWild</h3>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">info</span>
+              <strong>Description</strong>
+            </header>
+            <ul>
+              <li>
+                <p>
+                  PrintWild has been creating canvas prints and canvas stretched frames since 2003. With a family history in photography and photographic printing, we tailor ready-to-hang wall art on a wide collection of printed media and framing techniques.
+                </p>
+                <p>
+                  The site was built on Nuxt JavaScript framework,  I built a full blogging system for it, and I created API to pull relevent blog posts to the product pages based on the relevant category. I then created some vue components to consume the api.
+                  I also play a role in maintaining the website.
+                </p>
+              </li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Contribution</strong>
+            </header>
+            <ul>
+              <li>Developed Blogging Theme, also mantains the website.</li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">code</span>
+              <strong>Technologies</strong>
+            </header>
+            <ul>
+              <li>WordPress Custom Theme</li>
+              <li>Rest API</li>
+              <li>Vue.JS to display latest relevant posts on relevant product page.</li>
+              <li>Advance Custom Fields</li>
+              <li>HTML, CSS and JavaScript</li>
+           </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="khd-popup__background" id="wisdom-and-youth">
+      <button class="khd-popup__close-button" data-toggle="wisdom-and-youth|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-align__center su-gap--sm">
+        <img src="img/wisdom-and-youth.jpg" alt="Project Developed by Siphamandla - Wisdom and Youth Design" class="khd-popup__image"/>
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>Wisdom and Youth</h3>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">info</span>
+              <strong>Description</strong>
+            </header>
+            <ul>
+              <li>
+                <p>
+                  As a full service strategic and creative agency, we provide 360˚ advertising solutions to a range of clients across a myriad of industry sectors such as retail, FMCG, hospitality, property and agriculture.
+                </p>
+                <p>
+                  The design was very unique, was provided by a client as huge Photoshop files. The client never design websites before so I had to get as pixel perfact as I can, just like Disrupt Media, the project was using a non-google fonts which even after converting them to support browser, they're still a missing to work with.
+                  The project was very frontend focussed so I enjoying the challenge of converting a design with complex layout to working website.
+                </p>
+              </li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Contribution</strong>
+            </header>
+            <ul>
+              <li>Full Development</li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">code</span>
+              <strong>Technologies</strong>
+            </header>
+            <ul>
+              <li>PHP based WildWeb Custom CMS</li>
+              <li>HTML, CSS and JavaScript</li>
+              <li>Nuxt and Vue.js</li>
+           </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="khd-popup__background" id="greensafaris">
+      <button class="khd-popup__close-button" data-toggle="greensafaris|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-align__center su-gap--sm">
+        <img src="img/greensafaris.jpg" class="khd-popup__image" alt="Project Developed by Siphamandla - Yuppiestay Design"/>
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>Green Safaris</h3>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">info</span>
+              <strong>Description</strong>
+            </header>
+            <ul>
+              <li>
+                <p>
+                  Green Safaris has about 5 destinations in Zambia and 1 destination in Malawi. They are very big in the African tourism industry.
+                </p>
+                <p>I build the blogging solution in WordPress and I worked very closed with the team and my role was on the more technical and interactive side of things.</p>
+              </li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Contribution</strong>
+            </header>
+            <ul>
+              <li>Full Blogging Development &amp; Main Site features</li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">code</span>
+              <strong>Technologies</strong>
+            </header>
+            <ul>
+              <li>PHP based WildWeb Custom CMS</li>
+              <li>Site Wide Interactive components such as sliders, tabs and backend.</li>
+              <li></li>
+              <li>HTML, CSS and JavaScript</li>
+           </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="khd-popup__background" id="yuppiestay">
+      <button class="khd-popup__close-button" data-toggle="yuppiestay|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-align__center su-gap--sm">
+        <img src="img/yuppiestay.jpg" alt="Project Developed by Siphamandla - Yuppiestay Design" class="khd-popup__image"/>
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>Yuppiestay</h3>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">info</span>
+              <strong>Description</strong>
+            </header>
+            <ul>
+              <li>
+                <p>
+                  Yuppiestay is a platform that makes it easy for users to find their intended accommodation and they have 100's of guesthouses, hotels and self-catering accommodation options.
+                </p>
+                <p>My Job was to add a way to simplify property listing process by allowing admin users to retrieve property data from API data from Nightsbridge.</p>
+                <p>One of the features I did was to fetch properties from Nightsbridge and allow users to make a booking from the website, the feature is currently not live but it does exist.</p>
+              </li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Contribution</strong>
+            </header>
+            <ul>
+              <li>Plugin Development</li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">code</span>
+              <strong>Technologies</strong>
+            </header>
+            <ul>
+              <li>WordPress Plugin</li>
+              <li>Nightsbridge API</li>
+              <li>Cronjobs in WordPress</li>
+              <li>HTML, CSS and JavaScript</li>
+           </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="khd-popup__background" id="keynstay">
+      <button class="khd-popup__close-button" data-toggle="keynstay|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-align__center su-gap--sm">
+        <img src="img/keynstay.jpg" alt="Project Developed by Siphamandla - KeynStay Design" class="khd-popup__image"/>
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>Key and Stay</h3>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">info</span>
+              <strong>Description</strong>
+            </header>
+            <ul>
+              <li>
+                <p>Key and Stay has more than 36 properties in Greese and my job was to create a beatiful and user friendly webiste.</p>
+                <p>Even though the website was built using Elementor, I added so many useful features which were very important to the client,in form of a plugin.</p>
+              </li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Contribution</strong>
+            </header>
+            <ul>
+              <li>Plugin Development and Elementor</li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">code</span>
+              <strong>Technologies</strong>
+            </header>
+            <ul>
+              <li>WordPress Plugin</li>
+              <li>Mapping Solution</li>
+              <li>Custom Property filtering system using JavaScript and WordPress API</li>
+              <li>HTML, CSS and JavaScript</li>
+              <li>Dynamic RoomRaccoon Intergration</li>
+           </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="khd-popup__background" id="zct">
+      <button class="khd-popup__close-button" data-toggle="zct|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-align__center su-gap--sm">
+        <img src="img/zct.jpg" class="khd-popup__image" alt="Project Developed by Siphamandla - Zululand Conservation Trust Design"/>
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>Zululand Conservation  Trust</h3>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">info</span>
+              <strong>Description</strong>
+            </header>
+            <ul>
+              <li>
+                <p>My role in this website was to customize Woocormerce functionality in the one of their important and urgant product page.</p>
+              </li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Contribution</strong>
+            </header>
+            <ul>
+              <li>Plugin Development and Divi Page Builder</li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">code</span>
+              <strong>Technologies</strong>
+            </header>
+            <ul>
+              <li>WordPress Plugin</li>
+              <li>Adding custom fields in the product page.</li>
+              <li>Additional Pricing was added for these custom fields.</li>
+              <li>Divi Page Builder</li>
+              <li>HTML, CSS and JavaScript</li>
+           </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="khd-popup__background" id="oracle-group">
+      <button class="khd-popup__close-button" data-toggle="oracle-group|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-align__center su-gap--sm">
+        <img src="img/oracle-group.jpg" class="khd-popup__image" alt="Project Developed by Siphamandla - Oracle Group Design"/>
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>Oracle Group</h3>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">info</span>
+              <strong>Description</strong>
+            </header>
+            <ul>
+              <li>
+                <p>I am one of core team players in this project and one of the important features I built was the Snap and Save API Intergration.</p>
+                <p>I had to add authentication layer which uses email </p>
+              </li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Contribution</strong>
+            </header>
+            <ul>
+              <li>Part of Team</li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">code</span>
+              <strong>Technologies</strong>
+            </header>
+            <ul>
+              <li>Snap and Save API</li>
+              <li>HTML, CSS and JavaScript</li>
+           </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="khd-popup__background" id="wildweb">
+      <button class="khd-popup__close-button" data-toggle="wildweb|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-align__center su-gap--sm">
+        <img src="/img/wildweb.jpg" class="khd-popup__image" alt="Project Developed by Siphamandla - WildWeb Design"/>
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>WildWeb</h3>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">info</span>
+              <strong>Description</strong>
+            </header>
+            <ul>
+              <li>
+                <p>I am one of core team players in this project and one of the important features I built was the blog and 
+                  <a href="https://wildweb.co.za/apps/image-optimizer/">Image Optimization app</a>.</p>
+                  <p>Image Optimization app allows to resize multiple images based on user defined sizes and then converting them to WEBP format.Temporary Zip file is then generated for download which has all copies and html code for fully optimized image tag.</p>
+              </li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Contribution</strong>
+            </header>
+            <ul>
+              <li>Image Optimization Application, a blog and WordPress Rest API</li>
+           </ul>
+          </section>
+          <section>
+            <header class="su-align__left--center su-grid--a2">
+              <span class="material-symbols-outlined">code</span>
+              <strong>Technologies</strong>
+            </header>
+            <ul>
+              <li>Pulling Relevent and latest blog posts using WordPress API</li>
+              <li>Nuxt and Vue.js</li>
+              <li>HTML, CSS and JavaScript</li>
+           </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  
+    <!--skills-->
+    <div class="khd-popup__background just-text" id="backend">
+      <button class="khd-popup__close-button" data-toggle="backend|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-grid--fr1 su-align__center su-gap--sm">
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>Backend</h3>
+          <section>
+            <p>
+              WordPress provide a well documented api to allow programmers to customize or add functionality of the CMS.
+            </p>
+            <ul>
+                <li>
+                  <p class="title">Custom Post Types</p>
+                  <small>You can simply create your own models by registering your own post types and then use template files in your theme to route and render your data to the frontend.</small>
+                </li>
+                <li>
+                  <p>Custom Fields / ACF</p>
+                  <small>You can add you own custom fields using Post meta or the most commonly used custom fields plugin called ACF. </small>
+                </li>
+                <li>
+                  <p class="title">Query Builder / WP Query Class</p>
+                  <small>WordPress provides an intuitive class to do all kinds of model filtering, you can query data by post type, date,sort,order,aggrigate atc.</small>
+                </li>
+                <li>
+                  <p class="title">Hooks</p>
+                <p> 
+                  <small>Actions and Filters are a way in which you can add functionality to WordPress without altering the core code of WordPress. Hooks in WordPress are typically associated with the Observer or Publish-Subscribe design pattern.
+                  </small>
+                </p>
+                <p>
+                  <small>
+                    Action hooks are used to perform actions at specific points in the WordPress execution process. Actions don't return values; they are used to trigger events. For example, you can use an action hook to run a function when a post is published.
+                    Filter hooks, on the other hand, are used to modify data before it is displayed or used. 
+                  </small>
+                </p>
+                </li>
+                <li>
+                  <p class="title">API Calls</p>
+                  <p><small>You can use PHP in WordPress to make HTTP requests to external APIs using functions like wp_remote_get or wp_remote_post. </small></p>
+                  <p><small>Sometime you have to pull WordPress data into a website that does not use PHP like <a href="https://www.printwild.co.za/products/canvas-prints/premium-stretched-canvas/" target="_blank">PrintWild</a>, I had create a custom route to display specific blog posts per based on a category associated with the product in the main site.</small></p>
+              </li>
+                <li>
+                  <p class="title">SQL / WPDB</p>
+                  <p><small>I always try to avoid using $wpdb and only use it when data operations can't be achieved using built-in WordPress functions and APIs.</small></p>
+                </li>
+            </ul> 
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="khd-popup__background just-text" id="frontend">
+      <button class="khd-popup__close-button" data-toggle="frontend|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-grid--fr1 su-align__center su-gap--sm">
+        <div class="khd-popup__tab">
+          <button id="html-tab" class="link" data-toggleall="html|active|click.html-tab|tabbed|click">HTML</button>
+          <button id="css-tab" class="link" data-toggleall="css|active|click.css-tab|tabbed|click">CSS</button>
+          <button id="js-tab" class="link" data-toggleall="js|active|click.js-tab|tabbed|click">JS</button>
+        </div>
+        <div class="khd-popup__description">
+          <section id="html">
+            <h3>HTML</h3>
+            <p>Another huge part of my job is website perfomance and HTML plays a huge part when it comes to accessibility, loading speed and SEO. I use Google Lighthouse and Google Search console to find out what may need to be improved. I also use SEMRUSH to anaylise perfomance of each website. I would write a report and then fix the issues.</p>
+            <p>Sometimes we understand how capable HTML5 is, We tend to think of it as a way to structure our data in the UI but there is so much that HTML can do such as:</p>
+            <ul>
+              <li>
+                  <p class="title">Form Validation</p>
+                  <small>For client side validation, some HTML attributes can help you validate you user data before sending it to the server for further processing.
+                    Some of these attributes such as Required ( to ensure input id mandetory ), Min, Step and Max, multiple and more. 
+                  </small>
+              </li>
+              <li>
+                <p class="title">SEO Meta Data</p>
+                <small>Huge part of my daily job is to run SEMRUSH and fix on page SEO related issues to make sure Web crawlers do not have hard time trying to index clients website pages. 
+                  Cannonical tags, Alt image attributes, meta robot are all tags that I'd troubleshoot.</small>
+              </li>
+              <li>
+                <p class="title">Semantic HTML</p>
+                <small>I link to make use of semantic HTML ( instead of DIVs/Spans) to structure the data in a meaningful for accessibility and Web crawlers. Aria labels are great for accessibility too.</small>
+              </li>
+              <li>
+                <p class="title">Reactive HTML</p>
+                <small>You can get make use of accessible and lightweight accordion by using details tag.</small>
 
+              </li>
+              <li>
+                <p class="title">Image Optimization</p>
+                <small>I wrote a blog about <a href="https://wildweb.co.za/blog/image-optimisation-in-5-steps/">Image Optimization</a> and huge part of it was about how can leverage HTML lazyload,SRCSET and Picture tag.</small>
+              </li>
+            </ul>
+          </section>
+          <section id="css">
+            <h3>CSS</h3>
+            <p>Css - Morden CSS make you question the need for a frontend frameworks such as bootstrap coz  is so easy to create complex layouts and animations with CSS grids, flexbox and position properties. I even created my own lightweight CSS and JS based library which make it do much easier to create responsive and reactive UI with by using Utility html classes and data attributes. The framework follows BEM pattern which make it super easy to remember class names.</p>
+          </section>
+          <section id="js">
+            <h3>JavaScript</h3>
+            <p>
+              JS/JQuery Wordpress comes with JQuery out of the box, I like JQuery because it prevents you from sweating the smaller stuff.
+              I really love the ES6 syntax which allows one to create powerful one liners using combination of higher order functions, spread operator and arrow functions. I like to write my functions in modules an import them in one main app.js file.
+              I create a layer which simplifies the process of doing ajax by making using of html data attributes and JQuery.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="khd-popup__background just-text" id="version-control">
+      <button class="khd-popup__close-button" data-toggle="version-control|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-grid--fr1 su-align__center su-gap--sm">
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>Version Control ( Git) </h3>
+          <p>Version Control is neccessary practice to avoid headaches caused by conflicts when developers are working on the projects, even when you're working as a solo dev, you need to manage the versions of your code otherwise it will get out of hand pretty soon.</p>
+          <ul>
+            <li>
+                <p class="title">Repository Management</p>
+                <small>
+                  As some who usually plays a main role in when developing projects, creating and managing access to the repo is part of my workflow.
+                </small>
+            </li>
+            <li>
+            <p class="title">Repository Hosting</p>
+            <small>
+              We use Bit bucket to host Repositories. I host my personal projects in github so I am comfortable with both hosting platforms.
+            </small>
+          </li>
+          <li>
+            <p class="title">Conflict Resolution</p>
+            <small>
+              When working on the project as a team, you will eventually encounter merge conflicts, have the skills to resolve merge conflicts efficiently, maintaining code integrity and ensuring a smooth development workflow.
+            </small>
+          </li>
+          </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="khd-popup__background just-text" id="admin">
+      <button class="khd-popup__close-button" data-toggle="admin|khd-popup__background--active|click">Close</button>
+      <div class="khd-popup__content su-grid--fr1 su-align__center su-gap--sm">
+        <div class="su-grid--fr1 su-gap-y--sm su-padding--sm khd-popup__description">
+          <h3>Admin</h3>
+          <ul>
+            <li>
+                <p class="title">Website Hosting</p>
+                <small>
+                  The most fufiling part of develoment, it when the project or a feature is ready to go live. I am very much comfortable with any tradional PHP stack type hosting, I have hosted two website on AWS ECE2 so I am very much confident when it comes to hosting.
+                </small>
+            </li>
+            <li>
+            <p class="title">Google Anaylitics</p>
+            <small>
+              During the Go Live process,one thing I make sure is implemented and tested on website is Google Anaylitics and Facebook Pixel, because the last thing I want to hear is to get shouted at by marketing team for providing them with incorrect/incomplete website traffic data.
+            </small>
+          </li>
+          <li>
+            <p class="title">Emails</p>
+            <small>Email issues are very common when working as a developers, especially if the email hosting server is seperate from the main website hsting.</small>
+          </li>
+          <li>
+            <p class="title">WordPress and Code Sequrity Updates</p>
+            <small>WordPress CLI is such time saver when it comes to updating plugins, themes, and core WordPress. It is highly recommended to backup the database and files before making updates.</small>
+          </li>
+          </ul>
+          </section>
+        </div>
+      </div>
+
+    </div>
 </div>
 <script src="https://unpkg.com/simui-code@1.0.3/js/simui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 <script>
   document.addEventListener( 'DOMContentLoaded', function() {
     var elms = document.getElementsByClassName( 'splide' );
     console.log(elms)
     for ( var i = 0; i < elms.length; i++ ) {
-      new Splide( elms[ i ],{'perPage':3, 'gap':10,'arrows':false, 'pagination':true,'fixedHeight':'200px' } ).mount();
+      new Splide( elms[ i ],{
+        'perPage':3, 
+        'gap':10,
+        'arrows':true, 
+        'pagination':false,
+        'fixedHeight':'200px',   
+        breakpoints: {
+          1023: {
+            'perPage':2, 
+            'arrows':true,
+          },
+          767: {
+            'perPage':1
+          }
+      }
+ } ).mount();
     }
   })
   function* parents(e, selector) {
